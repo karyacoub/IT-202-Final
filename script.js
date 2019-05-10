@@ -21,7 +21,10 @@ function getPoliceStationData(currentLat, currentLng)
 
     $.get(url, function(response) {
         $.each(response, function(i, v) {
+            console.log(v);
             var address = v.address;
+            var districtNum = v.district;
+            var districtName = v.district_name;
             var lat = parseFloat(v.latitude);
             var lng = parseFloat(v.longitude);
 
@@ -33,7 +36,8 @@ function getPoliceStationData(currentLat, currentLng)
 
             // create infowindow with distance as content
             var contentString = '<div>'
-                            +       '<h1>Distance: ' + dist + ' km</h1>'
+                            +       '<h1>District: ' + districtNum + ' (' + districtName + ')<h1>'
+                            +       '<p>Distance: ' + dist + ' km</p>'
                             +   '</div>';
 
             var infoWindow = new google.maps.InfoWindow({
