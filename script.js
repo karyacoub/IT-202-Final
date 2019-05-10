@@ -31,9 +31,19 @@ function getPoliceStationData(currentLat, currentLng)
             // calculate distance between current position and marker position
             var dist = distance(currentLat, currentLng, lat, lng);
 
-            // create infowindow
+            // create infowindow with distance as content
+            var contentString = '<div>'
+                            +       '<h1>Distance: ' + dist + ' km</h1>'
+                            +   '</div>';
 
-            // add distance to infowindow
+            var infoWindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            // add infowindow to marker
+            marker.addListener('click', function() {
+                infoWindow.open(map, marker);
+            });
 
             // add marker and infowindow to map
             marker.setMap(map);
