@@ -36,7 +36,7 @@ function getPoliceStationData(currentLat, currentLng)
 
             // create infowindow with distance as content
             var contentString = '<div>'
-                            +       '<h1>District: ' + districtNum + ' (' + districtName + ')<h1>'
+                            +       '<h1>District: ' + districtNum + ' (' + districtName + ')</h1>'
                             +       '<p>Distance: ' + dist + ' km</p>'
                             +   '</div>';
 
