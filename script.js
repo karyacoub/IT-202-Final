@@ -29,6 +29,7 @@ function getPoliceStationData(currentLat, currentLng)
             var marker = createMarker(address, lat, lng);
 
             // calculate distance between current position and marker position
+            var dist = distance(currentLat, currentLng, lat, lng);
 
             // create infowindow
 
@@ -40,9 +41,14 @@ function getPoliceStationData(currentLat, currentLng)
     });
 }
 
-function distance()
+function distance(lat1, lng1, lat2, lng2)
 {
-    
+    var deglen = 110.25
+
+    x = lat1 - lat2
+    y = (lng1 - lng2) * Math.cos(lat2)
+
+    return deglen * Math.sqrt(x*x + y*y)
 }
 
 function createMarker(title, latitude, longitude)
