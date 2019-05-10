@@ -11,6 +11,9 @@
 
 <body class="mdc-typography">
     <h1 class="mdc-typography--headline1">Kareem Yacoub</h1>
+    <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">
+        <span class="mdc-button__label">Material Components!</span>
+    </button>
 
     <div id="map">
     </div>
@@ -19,4 +22,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv7JkrSp-QFXIMUVnudICV6XWKLD5a8AY&callback=initMap"></script>
+
+    <script>
+        $(document).ready(function() {
+            mdc.autoInit();
+        });
+    </script>
 </body>
